@@ -26,6 +26,7 @@ def buscarFrase(frase):
 
 
 def publicarMensaje(mensaje):
+   logging.info(" - Ejecutamos twidge update \'" + resp + "\'")
    return check_output(["twidge","update ","\'" + resp + "\'"])
 
 
@@ -46,7 +47,6 @@ while(3>2):
             data = data.replace("<b>","").replace("</b>","").replace("!","")
             logging.info(" - Encontrado en google:" + data)
             resp = "@" + nick + " " + data
-            logging.info(" - Ejecutamos twidge update \'" + resp + "\'")
             try:
                x = publicarMensaje(resp)
                logging.info(" - Salida del twidge:" + x)
